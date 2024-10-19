@@ -43,29 +43,18 @@ try:
         current_time=datetime.now().time()
         ##### For 5V Temple LED (morning) #####
         #Turn on the relay if the current time is between on_time and off_time
-        if on_time_m<=current_time<=off_time_m:
+        if (on_time_m<=current_time<=off_time_m) or (on_time_n<=current_time<=off_time_n):
             switch1.set_value(1)
         else:
             switch1.set_value(0)
-        time.sleep(30)
-        ##### For 5V Temple LED (night) #####
-        if on_time_n<=current_time<=off_time_n:
-            switch1.set_value(1)
-        else:
-            switch1.set_value(0)
-        time.sleep(30)
+        time.sleep(60)
 
         ##### For 220V Study Bulb #####
-        if on_time_1<=current_time<=off_time_2:
+        if (on_time_1<=current_time<=off_time_2) or (on_time_3<=current_time<=off_time_4):
             switch2.set_value(1)
         else:
             switch2.set_value(0)
-        time.sleep(30)
-        if on_time_3<=current_time<=off_time_4:
-            switch2.set_value(1)
-        else:
-            switch2.set_value(0)
-        time.sleep(30)
+        time.sleep(60)
 
         ##### For 220V Power Switch #####
         '''if on_time_p<=current_time<=off_time_q:
