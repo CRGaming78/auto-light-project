@@ -5,8 +5,8 @@ from datetime import datetime
 
 # GPIO pin number
 pin_number1=17
-pin_number2=23
-#pin_number3=0
+pin_number2=27
+#pin_number3=22
 
 chip=gpiod.Chip('gpiochip4')
 
@@ -17,6 +17,10 @@ switch2=chip.get_line(pin_number2)
 switch1.request(consumer="5v_Light",type=gpiod.LINE_REQ_DIR_OUT)
 switch2.request(consumer="220v_Light",type=gpiod.LINE_REQ_DIR_OUT)
 #switch3.request(consumer="220v_on_off",type=gpiod.LINE_REQ_DIR_OUT)
+
+switch1.set_value(0)
+switch2.set_value(0)
+#switch3.set_value(0)
 
 #time for 220v power on/off
 on_time_p=datetime.strptime("17:00:00","%H:%M:%S").time()
