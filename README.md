@@ -1,4 +1,4 @@
-<h1>ESP32 and Raspberry Pi Relay Control with Timed Automation and Future Temperature-Based RGB Control</h1>
+<h1>ESP32 and Raspberry Pi Relay Control with Timed Automation</h1>
 
 <h2>Project Overview</h2>
 <p>
